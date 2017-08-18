@@ -11,6 +11,7 @@ namespace WebApplicationAngEF.App_Start
     using Ninject;
     using Ninject.Web.Common;
     using Services;
+    using Data;
 
     public static class NinjectWebCommon 
     {
@@ -67,6 +68,8 @@ namespace WebApplicationAngEF.App_Start
 #else
                     kernel.Bind<IMailService>().To<MailService>().InRequestScope();
 #endif
+            kernel.Bind<IDataRepository>().To<DataRepository>().InRequestScope();
+            kernel.Bind<DataContext>().To<DataContext>().InRequestScope();
         }
     }
 }
