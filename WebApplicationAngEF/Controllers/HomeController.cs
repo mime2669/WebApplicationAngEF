@@ -49,5 +49,13 @@ namespace WebApplicationAngEF.Controllers
             }
             return View();
         }
+
+        //[Authorize]
+        public ActionResult MyProducts()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
     }
 }
